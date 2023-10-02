@@ -1,0 +1,12 @@
+.movie-thumbnail {
+  width: 120px;
+}
+
+.movie-item {
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.movie-selected {
+  background-color: var(--bs-primary-bg-subtle);
+}
