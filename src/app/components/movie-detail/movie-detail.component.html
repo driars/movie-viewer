@@ -1,1 +1,10 @@
-<p>movie-detail works!</p>
+<div class="d-flex flex-column p-4 gap-4 desktop-detail overflow-auto">
+  <div class="d-flex gap-4 align-items-start flex-column flex-xl-row align-items-xl-center">
+    <img class="rounded movie-thumbnail" [src]="'https://image.tmdb.org/t/p/w500/' + (movie?.backdrop_path ?? movie?.poster_path)" alt="Movie Thumbnail" />
+    <div class="d-flex flex-column gap-2">
+      <h4>{{ movie?.title }}</h4>
+      <h5 class="text-muted">{{ movie?.release_date }}</h5>
+    </div>
+  </div>
+  <p>{{ movie?.overview }}</p>
+</div>

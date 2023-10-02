@@ -1,4 +1,4 @@
-<div class="d-flex movie-item border-bottom border-1 p-3">
+<div class="d-flex movie-item border-bottom border-1 p-3" [class.movie-selected]="selected" (click)="onClick()">
   <img class="rounded movie-thumbnail" [src]="'https://image.tmdb.org/t/p/w154/' + (movie?.backdrop_path ?? movie?.poster_path)" alt="Movie Thumbnail" />
   <div class="d-flex flex-column">
     <h5>{{ movie?.title }}</h5>

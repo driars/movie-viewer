@@ -3,8 +3,11 @@
   <div
     class="d-none d-md-flex flex-column overflow-auto desktop-list border-start border-end border-1"
   >
-    <div *ngFor="let movie of movies$ | async">
-      <app-movie-item [movie]="movie" />
-    </div>
+  <div *ngFor="let movie of movies$ | async">
+    <app-movie-item
+      [movie]="movie"
+      [selected]="(currentMovie$ | async) === movie"
+    />
+  </div>
   </div>
 </div>

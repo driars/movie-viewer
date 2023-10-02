@@ -1,0 +1,17 @@
+@import "node_modules/bootstrap/scss/_functions";
+@import "node_modules/bootstrap/scss/_variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+.desktop-detail {
+  @include media-breakpoint-up(md) {
+    height: calc(100vh - var(--header-height));
+  }
+}
+
+.movie-thumbnail {
+  width: 480px;
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
+}

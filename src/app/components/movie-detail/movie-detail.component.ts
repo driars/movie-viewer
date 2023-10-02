@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../types';
+import { Movie } from 'src/app/models/movie.model';
 
 @Component({
   selector: 'app-movie-detail',
@@ -7,4 +10,11 @@ import { Component } from '@angular/core';
 })
 export class MovieDetailComponent {
 
+  movie?: Movie;
+
+  constructor(private store: Store<AppState>) {
+    this.store.select((state) => state.movies.currentMovie).subscribe(e => {
+      this.movie = e;
+    })
+  }
 }

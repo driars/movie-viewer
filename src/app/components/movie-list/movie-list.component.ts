@@ -10,6 +10,7 @@ import * as MovieActions from 'src/app/store/actions/movie.actions';
 })
 export class MovieListComponent {
   movies$ = this.store.select((state) => state.movies.data.results)
+  currentMovie$ = this.store.select((state) => state.movies.currentMovie)
 
   constructor(private store: Store<AppState>) {  }
 
