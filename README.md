@@ -77,11 +77,15 @@ This application allows users to show a list and details of movies from the TMDB
    ```sh
    NG_APP_API_KEY=YOUR_MOVIE_API_KEY
    ```
-4. Build the website
+4. Start the website
+   ```sh
+   yarn start
+   ```
+5. Build the website
    ```sh
    yarn build
    ```
-5. Test the website
+6. Test the website
    ```sh
    yarn test
    ```
