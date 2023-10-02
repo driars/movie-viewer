@@ -3,11 +3,23 @@
   <div
     class="d-none d-md-flex flex-column overflow-auto desktop-list border-start border-end border-1"
   >
-  <div *ngFor="let movie of movies$ | async">
-    <app-movie-item
-      [movie]="movie"
-      [selected]="(currentMovie$ | async) === movie"
-    />
-  </div>
+    <div *ngFor="let movie of movies$ | async">
+      <app-movie-item
+        [movie]="movie"
+        [selected]="(currentMovie$ | async) === movie"
+      />
+    </div>
+    <div class="mt-3 d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="20 * 500"
+        [(page)]="page"
+        [maxSize]="5"
+        [pageSize]="20"
+        [rotate]="true"
+        [ellipses]="false"
+        [boundaryLinks]="true"
+        (pageChange)="onPageChange()"
+      ></ngb-pagination>
+    </div>
   </div>
 </div>

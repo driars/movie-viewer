@@ -12,13 +12,19 @@ export class MovieListComponent {
   movies$ = this.store.select((state) => state.movies.data.results)
   currentMovie$ = this.store.select((state) => state.movies.currentMovie)
 
+  page: number = 1;
+
   constructor(private store: Store<AppState>) {  }
 
   ngOnInit(): void {
     this.fetchData();
   }
 
+  public onPageChange(): void {
+    this.fetchData();
+  }
+
   private fetchData(): void {
-    this.store.dispatch(MovieActions.fetchData({}));
+    this.store.dispatch(MovieActions.fetchData({ page: this.page }));
   }
 }
