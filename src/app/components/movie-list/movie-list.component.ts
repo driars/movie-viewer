@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/types';
 import * as MovieActions from 'src/app/store/actions/movie.actions';
@@ -8,7 +8,8 @@ import * as MovieActions from 'src/app/store/actions/movie.actions';
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.scss']
 })
-export class MovieListComponent {
+export class MovieListComponent implements OnInit {
+
   movies$ = this.store.select((state) => state.movies.data.results)
   currentMovie$ = this.store.select((state) => state.movies.currentMovie)
 
