@@ -12,6 +12,9 @@ export class MovieListComponent {
   movies$ = this.store.select((state) => state.movies.data.results)
   currentMovie$ = this.store.select((state) => state.movies.currentMovie)
 
+  loading$ = this.store.select((state) => state.movies.loading)
+  error$ = this.store.select((state) => state.movies.error)
+
   page: number = 1;
 
   constructor(private store: Store<AppState>) {  }
